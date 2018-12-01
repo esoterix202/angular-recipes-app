@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  loadedTemplate: string = 'recipe';
 
+  onTemplateSelected(template: string) {
+    this.loadedTemplate = template;
+  }
 }
