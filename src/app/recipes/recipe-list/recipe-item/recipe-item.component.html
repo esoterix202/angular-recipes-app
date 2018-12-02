@@ -1,3 +1,9 @@
-<p>
-  recipe-item works!
-</p>
+<a href="#" class="list-group-item d-flex justify-content-around mt-2" (click)="onSelected()">
+  <div>
+    <h4 class="list-group-item-heading">{{recipe.name}}</h4>
+    <p class="list-group-item-text">{{recipe.description}}</p>
+  </div>
+  <div>
+    <img [src]="recipe.imagePath" alt="{{ recipe.name }}" class="img-fluid" style="max-height: 5rem;">
+  </div>
+</a>

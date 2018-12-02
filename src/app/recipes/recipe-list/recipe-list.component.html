@@ -5,15 +5,7 @@
 </div>
 <div class="row mt-2">
   <div class="col-12 text-center">
-    <a href="#" class="list-group-item d-flex justify-content-around mt-2" *ngFor="let recipe of recipes">
-      <div>
-        <h4 class="list-group-item-heading">{{recipe.name}}</h4>
-        <p class="list-group-item-text">{{recipe.description}}</p>
-      </div>
-      <div>
-        <img [src]="recipe.imagePath" alt="{{ recipe.name }}" class="img-fluid" style="max-height: 5rem;">
-      </div>
-    </a>
-    <app-recipe-item></app-recipe-item>
+
+    <app-recipe-item *ngFor="let recipeItem of recipes; let recipeIndex = index" [recipe]="recipeItem" (recipeSelected)="onRecipeSelected(recipeItem)"></app-recipe-item>
   </div>
 </div>
