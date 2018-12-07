@@ -11,12 +11,21 @@ export class RecipeService {
 
   private recipes: Recipe[] = [
     new Recipe(
-      'A test recipe!',
+      'The Healthy Plate',
       'Test description',
       'https://www.wellplated.com/wp-content/uploads/2017/12/Hoppin-John-recipe-600x629@2x.jpg', [
-        new Ingredient('Strawberries', 30),
-        new Ingredient('Oil', 2),
+        new Ingredient('Carrots', 7),
+        new Ingredient('Spinach', 2),
         new Ingredient('Salt', 1),
+      ]),
+
+    new Recipe(
+      'The Italian Night',
+      'Test description',
+      'https://www.gimmesomeoven.com/wp-content/uploads/2014/03/Cajun-Jambalaya-Recipe-with-Andouille-Sausage-Shrimp-and-Chicken-32.jpg', [
+        new Ingredient('Pasta', 200),
+        new Ingredient('Oil', 0.5),
+        new Ingredient('Salt', 11),
       ])
   ];
 
@@ -26,6 +35,10 @@ export class RecipeService {
 
   getRecipes() {
     return this.recipes.slice();
+  }
+
+  getRecipe(index: number) {
+    return this.recipes[index];
   }
 
   sendIngredientsToShoppingList(ingredients: Ingredient[]) {

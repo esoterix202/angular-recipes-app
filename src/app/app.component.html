@@ -1,9 +1,8 @@
-<app-header (templateSelected) = "onTemplateSelected($event)"></app-header>
+<app-header></app-header>
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-      <app-recipes *ngIf="loadedTemplate === 'recipe'"></app-recipes>
-      <app-shopping-list *ngIf="loadedTemplate !== 'recipe'"></app-shopping-list>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
