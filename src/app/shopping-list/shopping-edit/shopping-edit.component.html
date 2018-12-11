@@ -1,23 +1,24 @@
 <div class="row mt-2">
   <div class="col-12">
-    <form>
+    <!-- TEMPLATE-DRIVEN approach for shopping-list-edit form is used here -->
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
       <div class="row">
         <div class="col-sm-5 form-group">
           <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" id="name" class="form-control" placeholder="Edit List"
-            #nameInput>
+            <input type="text" id="name" class="form-control" placeholder="Edit List" name="name" autocomplete="off"
+              ngModel required>
           </div>
         </div>
         <div class="col-sm-2 form-group">
           <label for="amount">Amount</label>
-          <input type="number" id="amount" class="form-control" #amountInput>
+          <input type="number" id="amount" class="form-control" name="amount" ngModel required pattern="^[1-9]+[0-9]*$">
         </div>
       </div>
       <div class="col-12">
-        <button class="btn btn-success mr-2" type="submit" (click)="onAddIngredient()">Add</button>
-        <button class="btn btn-danger mr-2" type="button">Delete</button>
-        <button class="btn btn-primary mr-2" type="button">Clear</button>
+        <button class="btn btn-success mr-2" type="submit" [disabled]="!form.valid">{{ editMode ? 'Update' : 'Add' }}</button>
+        <button class="btn btn-danger mr-2" type="button" (click)="onDelete()" *ngIf="editMode">Delete</button>
+        <button class="btn btn-primary mr-2" type="button" (click)="onClear()">Clear</button>
       </div>
     </form>
   </div>

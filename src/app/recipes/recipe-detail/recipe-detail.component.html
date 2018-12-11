@@ -13,7 +13,7 @@
     <div>
       <a class="btn btn-primary mr-2" (click)="sendIngredients()">To Shopping List</a>
       <a class="btn btn-success mr-2" (click)="onEditRecipe()">Edit Recipe</a>
-      <a class="btn btn-danger">Delete Recipe</a>
+      <a class="btn btn-danger" (click)="onDeleteRecipe()">Delete Recipe</a>
     </div>
   </div>
 </div>
@@ -25,8 +25,8 @@
 <div class="row">
   <div class="col-12 text-center">
     <ul class="list-group">
-      <li class="list-group-item recipe-detail__ingredient" *ngFor="let ingredient of recipe.ingredients">
-        {{ ingredient.name }} - {{ ingredient.ammount }}
+      <li class="list-group-item recipe-detail__ingredient mb-1" *ngFor="let ingredient of recipe.ingredients">
+        {{ ingredient.name }} - {{ ingredient.amount }}
       </li>
     </ul>
   </div>
