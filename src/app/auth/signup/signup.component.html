@@ -1,0 +1,15 @@
+<div class="row justify-content-center mt-5">
+  <div class="col-md-6">
+    <form (ngSubmit)="onSignup(form)" #form="ngForm">
+      <div class="form-group">
+        <label for="email">Mail</label>
+        <input type="email" id="email" name="email" autocomplete="off" class="form-control" ngModel>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" autocomplete="off" class="form-control" ngModel>
+      </div>
+      <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Sign Up</button>
+    </form>
+  </div>
+</div>
