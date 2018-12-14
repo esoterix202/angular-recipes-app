@@ -11,6 +11,7 @@ export class AuthGuard implements CanActivate {
   }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    console.warn('PERMISSION TO VISIT THIS PAGE ? ', this.authService.isAuthenticated());
     return  this.authService.isAuthenticated();
   }
 }

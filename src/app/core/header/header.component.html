@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a [routerLink]="['/recipes']" class=" navbar-brand">Recipe Book</a>
+      <a [routerLink]="['']" class=" navbar-brand">Recipe Book</a>
     </div>
 
     <div class="collapse navbar-collapse">
@@ -11,11 +11,11 @@
             List</a></li>
       </ul>
       <ul class="navbar-nav">
-        <ng-template [ngIf]="!authService.isAuthenticated()">
+        <ng-template [ngIf]="!isAuthenticated()">
           <li class="nav-item"><a class="nav-link" routerLink="signup">Register</a></li>
           <li class="nav-item"><a class="nav-link" routerLink="signin">Login</a></li>
         </ng-template>
-        <ng-container *ngIf="authService.isAuthenticated()">
+        <ng-container *ngIf="isAuthenticated()">
           <li class="nav-item"><a class="nav-link" style="cursor: pointer;" (click)="onLogout()">Logout</a></li>
           <li class="nav-item"><a class="nav-link" (click)="onSaveData()">Save Data</a></li>
           <li class="nav-item"><a class="nav-link" (click)="onFetchData()">Fetch Data</a></li>
